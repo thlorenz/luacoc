@@ -25,6 +25,14 @@ packer.startup(function(use)
     end
   }
 
+  -- Editing
+  require('lcoc.plugin.tabular').init()
+  use {
+    'godlygeek/tabular',
+    opt = true,
+    cmd = { "Tabularize" }
+  }
+
   -- Theme
   use {
     'challenger-deep-theme/vim',

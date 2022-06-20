@@ -1,6 +1,11 @@
 local M = {}
 
 M.load_default_options = function()
+  vim.cmd [[
+    nnoremap <SPACE> <Nop>
+    let mapleader = " "
+  ]]
+
   local o         = vim.opt
   o.clipboard     = "unnamedplus" -- allows neovim to access the system clipboard
   o.cmdheight     = 1
