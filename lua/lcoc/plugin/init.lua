@@ -41,6 +41,15 @@ packer.startup(function(use)
     config = function() vim.cmd 'colorscheme challenger_deep' end
   }
 
+  -- Whichkey
+  use {
+    "max397574/which-key.nvim",
+    config = function()
+      require("lcoc.plugin.which_key").setup()
+    end,
+    event = "BufWinEnter"
+  }
+
   -- Tools
   use {
     'rizzatti/dash.vim',
