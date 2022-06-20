@@ -120,6 +120,7 @@ local function config()
           "Git Diff",
         },
       },
+      n = { "<cmd>NvimTreeToggle<CR>", "Explorer" }
     }
   }
 end

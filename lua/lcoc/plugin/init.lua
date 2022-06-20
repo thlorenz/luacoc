@@ -25,6 +25,19 @@ packer.startup(function(use)
     end
   }
 
+  -- Navigation
+  use {
+    'kyazdani42/nvim-tree.lua',
+    requires = {
+      'kyazdani42/nvim-web-devicons', -- optional, for file icons
+    },
+    opt = true,
+    cmd = { 'NvimTreeToggle' },
+    config = function()
+      require('lcoc.plugin.nvim-tree').setup()
+    end,
+  }
+
   -- Editing
   require('lcoc.plugin.tabular').init()
   use {
