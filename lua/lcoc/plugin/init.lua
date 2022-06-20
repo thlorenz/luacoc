@@ -45,7 +45,7 @@ packer.startup(function(use)
   use {
     "max397574/which-key.nvim",
     config = function()
-      require("lcoc.plugin.which_key").setup()
+      require("lcoc.plugin.which-key").setup()
     end,
     event = "BufWinEnter"
   }
@@ -81,6 +81,14 @@ packer.startup(function(use)
     ft = { "fugitive" }
   }
   use { 'skanehira/gh.vim', opt = true, cmd = { 'gh' } }
+
+  use {
+    "lewis6991/gitsigns.nvim",
+    config = function()
+      require("lcoc.plugin.gitsigns").setup()
+    end,
+    event = "BufRead",
+  }
 
   if packer_bootstrap then
     packer.sync()
