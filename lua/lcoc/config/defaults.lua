@@ -1,7 +1,4 @@
 return {
-  leader = "space",
-  colorscheme = "challenger_deep",
-
   log = {
     ---@usage can be { "trace", "debug", "info", "warn", "error", "fatal" },
     level = "warn",
