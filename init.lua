@@ -1,2 +1,2 @@
-require('bootstrap')
-require('plugin')
+require('lcoc.bootstrap')
+require('lcoc.plugin')
