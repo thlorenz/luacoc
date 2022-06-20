@@ -32,6 +32,7 @@ packer.startup(function(use)
     opt = true,
     cmd = { "Tabularize" }
   }
+  use 'tpope/vim-abolish'
 
   -- Theme
   use {
@@ -39,6 +40,38 @@ packer.startup(function(use)
     as = 'challenger_deep',
     config = function() vim.cmd 'colorscheme challenger_deep' end
   }
+
+  -- Tools
+  use {
+    'rizzatti/dash.vim',
+    opt = true,
+    cmd = { 'Dash' }
+  }
+
+  use 'wakatime/vim-wakatime'
+  use { 'kristijanhusak/vim-carbon-now-sh', opt = true, cmd = { 'CarbonNowSh' } }
+
+  use {
+    'tpope/vim-fugitive',
+    opt = true,
+    cmd = {
+      "G",
+      "Git",
+      "Gdiffsplit",
+      "Gread",
+      "Gwrite",
+      "Ggrep",
+      "GMove",
+      "GDelete",
+      "GBrowse",
+      "GRemove",
+      "GRename",
+      "Glgrep",
+      "Gedit"
+    },
+    ft = { "fugitive" }
+  }
+  use { 'skanehira/gh.vim', opt = true, cmd = { 'gh' } }
 
   if packer_bootstrap then
     packer.sync()
