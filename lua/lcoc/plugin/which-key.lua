@@ -1,7 +1,7 @@
 local M = {}
 
 local function config()
-  return {
+  local conf = {
     ---@usage disable which-key completely [not recommended]
     active = true,
     on_config_done = nil,
@@ -120,9 +120,32 @@ local function config()
           "Git Diff",
         },
       },
+
+      d = {
+        name = "Debug",
+        t = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Toggle Breakpoint" },
+        b = { "<cmd>lua require'dap'.step_back()<cr>", "Step Back" },
+        c = { "<cmd>lua require'dap'.continue()<cr>", "Continue" },
+        C = { "<cmd>lua require'dap'.run_to_cursor()<cr>", "Run To Cursor" },
+        d = { "<cmd>lua require'dap'.disconnect()<cr>", "Disconnect" },
+        g = { "<cmd>lua require'dap'.session()<cr>", "Get Session" },
+        i = { "<cmd>lua require'dap'.step_into()<cr>", "Step Into" },
+        o = { "<cmd>lua require'dapui'.toggle()<cr>", "Toggle UI" },
+        u = { "<cmd>lua require'dap'.step_out()<cr>", "Step Out" },
+        p = { "<cmd>lua require'dap'.pause()<cr>", "Pause" },
+        r = { "<cmd>lua require'dap'.repl.toggle()<cr>", "Toggle Repl" },
+        s = { "<cmd>lua require'dap'.continue(); require'dapui'.open()<cr>", "Start" },
+        q = { "<cmd>lua require'dap'.close()<cr>", "Quit" },
+      },
+
       n = { "<cmd>NvimTreeToggle<CR>", "Explorer" }
     }
   }
+
+  local mappings = conf.mappings
+  mappings['d']['/'] = { "<cmd>lua require'dap'.step_over()<cr>", "Step Over" }
+
+  return conf
 end
 
 M.setup = function()

@@ -103,6 +103,16 @@ packer.startup(function(use)
     event = "BufRead",
   }
 
+  -- Degugging
+  use {
+    'mfussenegger/nvim-dap',
+    config = function()
+      require('lcoc.plugin.dap').setup()
+    end,
+  }
+  use 'rcarriga/nvim-dap-ui'
+  require('lcoc.plugin.dapui').setup()
+
   if packer_bootstrap then
     packer.sync()
   end
