@@ -6,7 +6,7 @@ function M:init()
   local settings = require "lcoc.config.settings"
   settings.load_defaults()
 
-  -- require("lcoc.keymappings").load_defaults()
+  require("lcoc.config.keymappings").setup()
 
 
   -- local autocmds = require "lcoc.core.autocmds"
